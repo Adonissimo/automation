@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: inboxpilot
+    runtime: node
+    plan: starter
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.16.0
+      - key: DATA_DIR
+        value: /var/data
+      - key: BASE_URL
+        sync: false
+      - key: APP_PASSWORD
+        sync: false
+      - key: TOKEN_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+    disk:
+      name: inboxpilot-data
+      mountPath: /var/data
+      sizeGB: 1

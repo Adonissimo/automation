@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-11-25T19:46:05.0424992Z",
+  "narrative": {
+    "keyCharacteristics": [
+      "Calm green surfaces and restrained borders.",
+      "Compact rows with visible category labels.",
+      "Explicit operation modes and recoverable actions."
+    ],
+    "northStar": "",
+    "donts": [
+      "Don't render message bodies as HTML.",
+      "Don't imply that cleanup is permanent or sending is automatic."
+    ],
+    "overview": "A quiet personal workspace for daily inbox review. Desktop uses a fixed navigation rail and a dense, readable message table. Mobile uses horizontal navigation and a scrollable table. The primary action runs the rules; a persistent banner identifies preview versus active changes.\n\nThis document records the implemented interface, preserving the established direction rather than introducing a new identity.",
+    "dos": [
+      "Do keep category names visible alongside their colors.",
+      "Do preserve keyboard focus and reduced-motion support.",
+      "Do identify sample data, preview mode, and simulated sends honestly."
+    ],
+    "rules": []
+  },
+  "schemaVersion": 2,
+  "extensions": {
+    "shadows": [
+      {
+        "name": "dialog",
+        "purpose": "Separate modal content.",
+        "value": "0 20px 80px #16251b33"
+      },
+      {
+        "name": "toast",
+        "purpose": "Lift transient feedback.",
+        "value": "0 8px 35px #203b3324"
+      }
+    ],
+    "colorMeta": {
+      "green": {
+        "displayName": "green",
+        "canonical": "#195443",
+        "role": "primary"
+      },
+      "paper": {
+        "displayName": "paper",
+        "canonical": "#fbfcf8",
+        "role": "neutral"
+      },
+      "muted": {
+        "displayName": "muted",
+        "canonical": "#64746d",
+        "role": "neutral"
+      },
+      "red-bg": {
+        "displayName": "red bg",
+        "canonical": "#faeae5",
+        "role": "secondary"
+      },
+      "pale": {
+        "displayName": "pale",
+        "canonical": "#e8efe6",
+        "role": "primary"
+      },
+      "amber-bg": {
+        "displayName": "amber bg",
+        "canonical": "#f6efd9",
+        "role": "secondary"
+      },
+      "line": {
+        "displayName": "line",
+        "canonical": "#e1e5dd",
+        "role": "neutral"
+      },
+      "rail": {
+        "displayName": "rail",
+        "canonical": "#f0f3eb",
+        "role": "neutral"
+      },
+      "red": {
+        "displayName": "red",
+        "canonical": "#9a4038",
+        "role": "secondary"
+      },
+      "amber": {
+        "displayName": "amber",
+        "canonical": "#73541d",
+        "role": "secondary"
+      },
+      "ink": {
+        "displayName": "ink",
+        "canonical": "#223c34",
+        "role": "neutral"
+      }
+    },
+    "breakpoints": [
+      {
+        "value": "1500px",
+        "name": "wide"
+      },
+      {
+        "value": "1100px",
+        "name": "compact"
+      },
+      {
+        "value": "760px",
+        "name": "mobile"
+      }
+    ],
+    "motion": [
+      {
+        "name": "content-arrive",
+        "purpose": "Clip reveal; disabled for reduced motion.",
+        "value": ".3s ease-out"
+      }
+    ]
+  },
+  "title": "Design System: InboxPilot",
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "css": ".ds-button-primary{font:600 12px \"Segoe UI\",system-ui,sans-serif;padding:11px 16px;border:1px solid #e1e5dd;border-radius:6px;background:#195443;color:#fff;cursor:pointer}.ds-button-primary:hover{background:#103c2f}.ds-button-primary:focus-visible{outline:3px solid #67843e;outline-offset:4px}",
+      "html": "<button class=\"ds-button-primary\">Run automation</button>",
+      "description": "Compact workspace action.",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "css": ".ds-button-secondary{font:600 12px \"Segoe UI\",system-ui,sans-serif;padding:11px 16px;border:1px solid #e1e5dd;border-radius:6px;background:#fff;color:#223c34;cursor:pointer}.ds-button-secondary:hover{background:#f0f3eb}.ds-button-secondary:focus-visible{outline:3px solid #67843e;outline-offset:4px}",
+      "html": "<button class=\"ds-button-secondary\">Run automation</button>",
+      "description": "Compact workspace action.",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "Subtle Button",
+      "kind": "button",
+      "css": ".ds-button-subtle{font:600 12px \"Segoe UI\",system-ui,sans-serif;padding:11px 16px;border:1px solid #e1e5dd;border-radius:6px;background:transparent;color:#223c34;cursor:pointer}.ds-button-subtle:hover{background:#f0f3eb}.ds-button-subtle:focus-visible{outline:3px solid #67843e;outline-offset:4px}",
+      "html": "<button class=\"ds-button-subtle\">Run automation</button>",
+      "description": "Compact workspace action.",
+      "refersTo": "button-subtle"
+    },
+    {
+      "name": "Search",
+      "kind": "input",
+      "css": ".ds-search{font:12px \"Segoe UI\",system-ui,sans-serif;width:215px;max-width:100%;padding:9px 12px;background:transparent;color:var(--ink,#223c34);border:1px solid var(--line,#e1e5dd);border-radius:5px}.ds-search:focus-visible{outline:3px solid #67843e;outline-offset:4px}",
+      "html": "<input class=\"ds-search\" type=\"search\" placeholder=\"Search your inbox\" aria-label=\"Search messages\">",
+      "description": "Inbox text search.",
+      "refersTo": "search"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "css": ".ds-nav{font:650 12px \"Segoe UI\",system-ui,sans-serif;display:flex;justify-content:space-between;gap:32px;padding:13px 14px;border:0;border-radius:7px;background:#dfe9d8;color:var(--green,#195443);cursor:pointer}.ds-nav:hover{background:#e5ebdf}.ds-nav:focus-visible{outline:3px solid #67843e;outline-offset:4px}",
+      "html": "<button class=\"ds-nav\">Inbox <span>12</span></button>",
+      "description": "Selected workspace destination.",
+      "refersTo": "navigation"
+    },
+    {
+      "name": "Category Tag",
+      "kind": "chip",
+      "css": ".ds-tag{font:10px \"Segoe UI\",system-ui,sans-serif;display:inline-block;padding:5px 8px;border-radius:4px;background:var(--red-bg,#faeae5);color:var(--red,#9a4038)}",
+      "html": "<span class=\"ds-tag\">Junk</span>",
+      "description": "Category text with semantic tone.",
+      "refersTo": "category-tag"
+    },
+    {
+      "name": "Mode Banner",
+      "kind": "card",
+      "css": ".ds-banner{font:13px \"Segoe UI\",system-ui,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 24px;border-radius:8px;background:var(--pale,#e8efe6);color:var(--ink,#223c34)}.ds-pill{background:#d5e3cd;color:#31592d;border-radius:30px;padding:6px 11px;font-size:10px;font-weight:650;white-space:nowrap}",
+      "html": "<div class=\"ds-banner\"><strong>Look first. Automate when you are ready.</strong><span class=\"ds-pill\">Shadow mode</span></div>",
+      "description": "Persistent operation mode.",
+      "refersTo": "mode-banner"
+    }
+  ]
+}

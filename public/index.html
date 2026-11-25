@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e35"><title>InboxPilot · Email workspace</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="InboxPilot home"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 9h22v16H5zM5 9l11 9L27 9M10 5h12"/></svg>InboxPilot<span class="brand-dot"></span></a>
+    <p class="workspace-label">YOUR WORKSPACE</p>
+    <nav aria-label="Workspace"><button data-view="inbox" class="nav active">Inbox <span id="inbox-count"></span></button><button data-view="review" class="nav">Needs attention <span id="review-count"></span></button><button data-view="trash" class="nav">Trash <span id="trash-count"></span></button><button data-view="activity" class="nav">Activity log</button><button data-view="settings" class="nav">Automation rules</button></nav>
+    <div class="sidebar-note"><span class="status-light"></span><strong id="mode-label">Demo workspace</strong><p id="mode-detail">Sample emails. No real mail changes.</p></div>
+    <div class="account"><span class="avatar">IP</span><div><strong id="account-name">Portfolio demo</strong><small id="account-email">Explore before connecting</small></div></div>
+  </aside>
+  <main>
+    <header><span>Email workspace <span class="slash">/</span> <span id="breadcrumb">Inbox</span></span><button id="connection" class="button subtle">Connect Gmail <span aria-hidden="true">↗</span></button></header>
+    <section class="page-heading"><div><h1 id="title">A little less inbox.</h1><p id="subtitle">Keep the important. Let your rules handle the rest.</p></div><button class="button primary" id="run">Run automation <span aria-hidden="true">↗</span></button></section>
+    <div id="banner" class="banner"><div><strong id="banner-title">Look first. Automate when you’re ready.</strong><p id="banner-text">Shadow mode previews every decision without changing your inbox.</p></div><span id="mode-pill" class="pill">Shadow mode</span></div>
+    <section id="content" aria-label="Email workspace content"><p>Loading your workspace…</p></section>
+    <footer><span id="sync-status">Demo data · stored locally</span><span>Built for a calmer inbox.</span></footer>
+  </main>
+  <dialog id="message-dialog"><div class="dialog-top"><span>Message details</span><button class="icon-button" id="close-message" aria-label="Close message">×</button></div><div id="message-content"></div></dialog>
+  <dialog id="compose-dialog"><div class="dialog-top"><h2>Review your reply</h2><button class="icon-button" id="close-compose" aria-label="Close reply">×</button></div><form id="compose-form"><label>To<input name="to" type="email" required></label><label>Subject<input name="subject" maxlength="200" required></label><label>Message<textarea name="body" rows="7" maxlength="15000" required></textarea></label><p id="send-note" class="muted"></p><label class="check"><input name="confirmed" type="checkbox" required>I reviewed this recipient and message.</label><button class="button primary" id="send-button">Approve and send</button></form></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+</body></html>
